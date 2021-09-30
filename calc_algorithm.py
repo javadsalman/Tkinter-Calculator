@@ -49,7 +49,7 @@ class CalcAlg(object):
         last_left_par = 0
         while array:
             if '(' not in array:
-                return float(self.__calc_exp(array))
+                return float(self._calc_exp(array))
             
             s = array[counter]
             
@@ -58,7 +58,7 @@ class CalcAlg(object):
                 there_is_par = True
             elif s == ')':
                 slice = array[last_left_par+1: counter]
-                res = self.__calc_exp(slice)
+                res = self._calc_exp(slice)
                 array[last_left_par: counter+1] = [res]
                 
                 counter = 0
