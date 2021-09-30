@@ -1,5 +1,5 @@
 class CalcAlg(object):
-    def _-calc(self, first, exp, second):
+    def _calc(self, first, exp, second):
         if exp == '*':
             result = float(first) * float(second)
         elif exp == '/':
@@ -27,7 +27,7 @@ class CalcAlg(object):
             if str(s) in exps[muldiv]:
                 first = array[counter-1]
                 second = array[counter+1]
-                res = self.calc(first, s, second)
+                res = self._calc(first, s, second)
                 array[counter-1: counter+2] = [res]
                 counter -= 1
                 
@@ -49,7 +49,7 @@ class CalcAlg(object):
         last_left_par = 0
         while array:
             if '(' not in array:
-                return float(self.calc_exp(array))
+                return float(self.__calc_exp(array))
             
             s = array[counter]
             
@@ -58,7 +58,7 @@ class CalcAlg(object):
                 there_is_par = True
             elif s == ')':
                 slice = array[last_left_par+1: counter]
-                res = self.calc_exp(slice)
+                res = self.__calc_exp(slice)
                 array[last_left_par: counter+1] = [res]
                 
                 counter = 0
