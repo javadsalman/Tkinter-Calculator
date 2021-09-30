@@ -1,5 +1,5 @@
 class CalcAlg(object):
-    def calc(self, first, exp, second):
+    def _-calc(self, first, exp, second):
         if exp == '*':
             result = float(first) * float(second)
         elif exp == '/':
@@ -13,7 +13,7 @@ class CalcAlg(object):
         
         return float(result)
             
-    def calc_exp(self, array):
+    def _calc_exp(self, array):
         counter = 0
         muldiv = 0
         exps = ['*/', '-+']
